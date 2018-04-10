@@ -31,6 +31,11 @@ body{
 	position: relative;
 	left: 10%;
 }
+.item:hover{
+	box-shadow: 2px 2px #000;
+	filter: contrast(100%) brightness(150%);
+	transition: 1s;
+}
 .avatar{
 	background: #000;
 	opacity: 0.6;
