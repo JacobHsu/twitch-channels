@@ -1,14 +1,14 @@
 $(function() {
 
     // https://dev.twitch.tv/docs/v5/reference/streams/#get-live-streams
-
-    var twitchURL = 'https://api.twitch.tv/kraken/streams/?game=League%20of%20Legends';
+    const limit = 20;
+    var twitchURL = 'https://api.twitch.tv/kraken/streams/?game=League%20of%20Legends'+'&limit='+limit;
     var myContentType = 'application/vnd.twitchtv.v5+json';
     var clientID = '8o2r5ir7u9g113hna3gps6c7jlofpk';
 
     $.ajax({
         type: 'GET',
-        url: 'https://api.twitch.tv/kraken/streams/?game=League%20of%20Legends',
+        url: twitchURL,
         headers: {
             'Accept':'application/vnd.twitchtv.v5+json',
             'Client-ID': clientID
@@ -18,17 +18,19 @@ $(function() {
 
             console.log('ajax is loading successfully!!');
 
-            for (var i = 0; i < 20; i++) {
+            const { streams } = data;
+            for (let stream of streams) {
+
                 var $content =`
                 <li class='item'>
                     <div class='video'>
-                        <img src='${data.streams[i].preview.medium}' />
+                        <img src='${stream.preview.medium}' />
                     </div>
                     <div class='avatar'> 
-                        <img class='img' src='${data.streams[i].channel.logo}'>
+                        <img class='img' src='${stream.channel.logo}'>
                         <div id='info_' class='info'>
-                            <p class='channel'> ${data.streams[i].channel.status} </p>   
-                            <p class='host'> ${data.streams[i].channel.display_name} </p>
+                            <p class='channel'> ${stream.channel.status} </p>   
+                            <p class='host'> ${stream.channel.display_name} </p>
                         </div>
                     </div>
                 </li>`;
