@@ -27,28 +27,23 @@ $(function() {
     // https://dev.twitch.tv/docs/v5/reference/streams/#get-live-streams
     function getData(callback) { 
         
-        var twitchURL = 'https://api.twitch.tv/kraken/streams/?game=League%20of%20Legends'+'&limit='+limit+'&offset='+offset;
-        var myContentType = 'application/vnd.twitchtv.v5+json';
         var clientID = '8o2r5ir7u9g113hna3gps6c7jlofpk';
+        var twitchURL = 'https://api.twitch.tv/kraken/streams/?game=League%20of%20Legends'+'&client_id='+clientID+'&limit='+limit+'&offset='+offset;
+        var myContentType = 'application/vnd.twitchtv.v5+json';
+        
 
-        $.ajax({
-            type: 'GET',
-            url: twitchURL,
-            headers: {
-                'Accept':'application/vnd.twitchtv.v5+json',
-                'Client-ID': clientID
-            },
-
-            success: function(data) {
-
-                console.log('ajax is loading successfully!!');
-                callback(null, data);
-
-            },
-            error: function(data) {
-                callback(null, 'Error');
-            }
-        });
+        var r = new XMLHttpRequest();
+        r.open("GET", twitchURL, true);
+        r.onreadystatechange = function () {
+          if (r.readyState != 4 || r.status != 200) {
+            callback(null, 'Error');
+            return;
+          } 
+          //alert("Success: " + r.responseText);
+          var data = r.responseText;
+          callback(null, JSON.parse(data));
+        };
+        r.send();
     }
 
     function getTemaplateData(data) {

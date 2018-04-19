@@ -12,7 +12,9 @@
 # sass
 
 `npm install -g sass`  
-`$sass sass/style.sass css/style.css`  
+`$sass sass/style.sass css/style.css`
+
+[vanilla.js](http://vanilla-js.com/)  
 
 ### Sublime
 `ctrl+shift+p`  搜索sass，點擊安裝  
