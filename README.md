@@ -12,7 +12,12 @@
 # sass
 
 `npm install -g sass`  
-`$sass sass/style.sass css/style.css`  
+`$sass sass/style.sass css/style.css`
+
+# note
+
+[vanilla.js](http://vanilla-js.com/)  
+`i18n` 的全名叫做internationalization，這個簡寫的由來就是因為 i 跟 n 中間有 18 個字母。
 
 ### Sublime
 `ctrl+shift+p`  搜索sass，點擊安裝  

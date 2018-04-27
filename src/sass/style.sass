@@ -1,0 +1,91 @@
+$white: #fff
+$black: #000
+$black-background: rgba(0,0,0,.5)
+ 
+
+html,
+body
+	height: 100%
+	padding: 0
+	margin:0
+body
+	background-image: url('https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg')
+	background-attachment: fixed
+	color:$white
+
+#container
+	width: 100%
+	z-index: -999
+	background: $black-background
+	display: flex
+	justify-content: center
+	#menu
+		text-align: center
+		height: 120px
+		background: none
+		position: absolute
+
+	button
+		padding: 5px
+		background: none
+		border: none
+		color: #fff
+		button: hover
+		color: $white
+
+#content
+	margin: 120px auto
+	.item
+		width:300px
+		height:200px
+		display: inline-block
+		list-style: none
+		margin: 10px
+		padding-left: 10px
+		padding-right: 10px
+		padding-bottom: 80px
+		padding-top: 10px
+		position: relative
+		left: 5%
+	.item:hover
+		box-shadow: 2px 2px $black
+		filter: contrast(100%) brightness(150%)
+		transition: 1s
+	.video 
+		border: none
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0px
+		top: 0px
+
+	.avatar
+		background: $black
+		opacity: 0.6
+		position: absolute
+		top: 180px
+		width: 320px
+		height: 110px
+		left: 0px	
+
+	.img
+		border-radius: 50%;
+		background-size: 50px 50px;
+		width: 70px;
+		height: 70px;
+		position: relative;
+		left: 20px;
+		top:20px;
+
+	.channel,
+	.host
+		position: relative
+		left:120px
+		bottom:60px
+
+	.channel
+		width: 175px	
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+

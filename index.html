@@ -3,14 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>frontend</title>
-	<link rel="stylesheet" href="css/style.css"></link>
+	<link rel="stylesheet" href="src/css/style.css"></link>
 </head>
 <body>
 	<div id="container">
+		<div id='menu'>
+            <h1 id='title'>中文直播的頻道</h1>
+            <div id='btn'>
+            	<button data-selectLang='zh-tw' id='twBTN'>中文</button>
+            	<button data-selectLang='en' id='enBTN'>English</button>
+            </div>
+        </div>
 		<ul id='content'>
         </ul>
 	</div>
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-    <script type='text/javascript' src='script/script.js'></script>
+<!--      <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+   <script type='text/javascript' src='script/script.js'></script>
+    <script src='script/i18n/lang-en.js'></script>
+    <script src='script/i18n/lang-zh-tw.js'></script> -->
+    <script src='dist/bundle.js'></script>
 </body>
 </html>
