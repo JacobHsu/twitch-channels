@@ -47,4 +47,4 @@ Basic Setup
 
 # gh-pages  
 
-`$git subtree push --prefix app origin gh-pages`  
+`$git subtree push --prefix dist origin gh-pages`  
